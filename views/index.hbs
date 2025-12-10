@@ -1,7 +1,17 @@
 <h1>Daily Affirmations</h1>
 
+<form method="POST" action="/item">
+  <input type="text" name="text" placeholder="Add affirmation" required />
+  <button type="submit">Add</button>
+</form>
+
 <ul>
   {{#each affirmations}}
-    <li>{{this.text}}</li>
+    <li data-id="{{this._id}}">
+      <span class="text">{{this.text}}</span>
+
+      <button class="edit-btn">Edit</button>
+      <button class="delete-btn">Delete</button>
+    </li>
   {{/each}}
 </ul>
